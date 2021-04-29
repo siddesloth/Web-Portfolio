@@ -1,0 +1,147 @@
+.skinny-banner--frozen-kids{
+    height: 80px;
+    width: 100%;
+    background-image: url('https://clarks.scene7.com/is/image/Pangaea2Build/ir-kids-frozen-skinny-desktop-aw20?fmt=pjpeg&wid=1500');
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.skinny--frozen-images{
+    align-items: center;
+    display: flex;
+}
+.skinny--frozen-images-element{
+    width: 100%;
+    max-width: 150px;
+}
+.skinny--frozen-images-container{
+    width: 150px;
+    margin-left: 230px;
+}
+.frozen--shop-link{
+    width: 25%;
+    margin: 0 0 0 auto;
+}
+.frozen--shop-link-container{
+    margin: 0 auto;
+    width: 160px;
+}
+.frozen--shop-cta{
+    padding: 15px 0;
+    width: 100%;
+    display: inline-block;
+    border-radius: 7px;
+    background-color: #f4f3ef;
+    color: #000;
+    font-weight: 500;
+    transition: 0.3s;
+    text-align: center;
+}
+.frozen--shop-cta:hover{
+    color: #fff;
+    background-color: #000;
+}
+.frozen--disney-copyright{
+    position: absolute;
+    color: #fff;
+    font-size: 13px;
+    margin: 0;
+}
+@media all and (min-width: 1401px){
+    .skinny--frozen-images{
+        width: 1200px;
+    }
+}
+@media all and (max-width: 1400px) and (min-width: 971px){
+    #skinny--frozen-image-3{
+        display: none;
+    }
+    .skinny--frozen-images{
+        width: 800px;
+    }
+}
+@media all and (max-width: 970px) and (min-width: 601px){
+    #skinny--frozen-image-3, #skinny--frozen-image-2{
+        display: none;
+    }
+    .skinny--frozen-images{
+        width: 400px;
+    }
+}
+@media all and (max-width: 600px){
+    #skinny--frozen-image-3, #skinny--frozen-image-2{
+        display: none;
+    }
+}
+@media all and (max-width: 600px) and (min-width: 551px){
+    .skinny--frozen-images-container{
+        margin-left: 185px;
+    }
+    .skinny--frozen-images{
+        width: 350px;
+    }
+}
+@media all and (max-width: 760px) and (min-width: 551px){
+    .frozen--shop-link{
+        width: 35%;
+    }
+}
+@media all and (max-width: 550px){
+    .skinny--frozen-images-container{
+        margin-left: 20px;
+    }
+    .frozen--shop-link{
+        width: 180px;
+    }
+    .frozen--shop-link-container{
+        margin-right: 20px;
+    }
+    .skinny-banner--frozen-kids{
+        background-image: url('https://clarks.scene7.com/is/image/Pangaea2Build/ir-kids-frozen-skinny-mobile-550-oragne-aw20?fmt=pjpeg&wid=550');
+    }
+}
+@media all and (max-width: 400px){
+    .skinny-banner--frozen-kids{
+        position: relative;
+    }
+    .frozen--disney-copyright{
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        left: 90%;
+        top: 90%;
+    }
+    .skinny-banner--frozen-kids{
+        background-image: url('https://clarks.scene7.com/is/image/Pangaea2Build/ir-kids-frozen-skinny-mobile-400-white-aw20?fmt=pjpeg&wid=400');
+    }
+    .frozen--shop-link{
+        margin-right: 2px;
+    }
+    .frozen--shop-cta{
+        padding: 13px 0;
+    }
+    .frozen--shop-link-container{
+        width: 145px;
+        margin: 0 5px 0 auto;
+    }
+    .skinny--frozen-images-container{
+        margin-left: 10px;
+    }
+}
+@media all and (min-width: 401px){
+    .frozen--shop-link{
+        position: relative;
+    }
+    .frozen--disney-copyright{
+        -webkit-transform: translate(-50%,-50%) rotate(270deg);
+        -moz-transform: translate(-50%,-50%) rotate(270deg);
+        -ms-transform: translate(-50%,-50%) rotate(270deg);
+        transform: translate(-50%,-50%) rotate(270deg);
+        left: 95%;
+        top: 65%;
+    }
+}
