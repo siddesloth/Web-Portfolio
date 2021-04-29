@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Size Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.clarks.co.uk/_ui/responsive/common/css/css-bundle.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.clarks.co.uk/_ui/responsive/common/css/thoughts-achievements.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.clarks.co.uk/assets/global/global.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.clarks.co.uk/assets/global/site/uk-global.css" />
+    <link rel="stylesheet" type="text/css" href="MAF-Size-Calculator.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../_Pangaea2-sFtp-folder-Structure/departments/aw19/womens/aw19-womens-all-wk31.css" />
+    <!-- Link to JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="MAF-Size-Calculator.js"></script>
+
+    <!-- Only used to replicate template -->
+    <style type="text/css">.heading--do-not-copy{font-family:'Montserrat',sans-serif;display:block;width:100%;margin:100px 0 20px!important;text-align:center;font-weight:700}.prop-bar--do-not-copy{display:block;clear:both;height:60px;width:100%;max-width:1500px;margin:0 auto 10px;background:#ccc}.dept-content--do-not-copy{display:block;clear:both;height:300px;width:100%;max-width:1500px;margin:0 auto 130px;background:#f5f5f5}</style>
+</head>
+<body>
+    <div class="measure--section-three">
+        <div class="maf-container maf-container--header">
+            <picture>
+                <source srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-mobile-footer?fmt=pjpeg&amp;wid=481" media="(max-width: 480px)">
+                <source srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-mobile-footer?fmt=pjpeg&amp;wid=650" media="(max-width: 649px)">
+                <source srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-mobile-footer?fmt=pjpeg&amp;wid=750" media="(max-width: 750px)">
+                <source srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-desktop-footer?fmt=pjpeg&amp;wid=992" media="(max-width: 991px)">
+                <source srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-desktop-footer?fmt=pjpeg&amp;wid=1200" media="(max-width: 1199px)">
+                <source srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-desktop-footer?fmt=pjpeg&amp;wid=1500" media="(min-width: 1200px)">
+                <img class="" src="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-desktop-footer?fmt=pjpeg&wid=1500" alt="">
+            </picture>
+        </div>
+        <div class="section-three--triple-container">
+            <!-- Size Calculator section -->
+            <div class="size-calculator--modal-popup measure-triple-section--hidden size-calculator--bottom-border" id="size-calculator" aria-hidden="true">
+                <div>
+                    <div id="MAF-calculate--header-image" class="measure--book-appointment-svg">
+                        <img class="size-calculator--heading-svg-mobile" src="https://clarks.scene7.com/is/content/Pangaea2Build/ss20-Maf-svg-006">
+                        <h1 class="need-a-gauge--heading size-calculator--heading-font size-calculator--heading-mobile">Size calculator</h1>
+                    </div>
+                    <div id="MAF-result--header-image" class="measure--book-appointment-svg hidden">
+                        <img class="size-calculator--heading-svg-mobile" src="https://clarks.scene7.com/is/content/Pangaea2Build/ss20-Maf-svg-003">
+                        <h1 class="need-a-gauge--heading size-calculator--heading-font size-calculator--heading-mobile">Size calculator</h1>
+                    </div>
+                    <div id="calculation-section" class="size-calculator--calc-section" aria-hidden="false">
+                        <div class="measure--need-gauge-top-text">
+                            <h1 class="need-a-gauge--heading size-calculator--heading-font size-calculator--heading-desktop">Size calculator</h1>
+                            <p class="need-a-gauge--text-secondary">Use the size calculator below in conjunction with your Clarks Foot Gauge to determine your child’s Clarks shoe size.</p>
+                        </div>
+                        <form id="sizeCalculatorForm" data-form-validate="true" data-validate="parsley" action="/calculateSize" method="post" novalidate="">
+                            <div>
+                                <div class="global-error-message hidden text-center"> <!-- ? No Idea | Maybe an error message is appended here? -->
+                                    <p role="alert"></p>
+                                </div>
+                                <div class="error-container" role="alert" style="display: none;"> <!-- ? No Idea | I assume its where an error message is appended to? -->
+                                </div>
+                                <div style="width: 100%;">
+                                    <div class="size-calculator--container size-calculator-modal-content">
+                                        <!-- Gauge Content -->
+                                        <div id="gauge-anchor--section">
+                                            <!-- Guage heading -->
+                                            <!-- Gauges -->
+                                            <p class="size-calculator--description-text">Step 1: Select the foot gauge you used</p>
+                                            <div class="gauge-image--section size-calculator--align-center" role="radiogroup" aria-labelledby="childrens_size_gauge_label">
+                                                <!-- ** Toddler gauge image, title and functionality -->
+                                                <a href="#gauge-anchor--section" class="gauge-image form-group js-guage-selection temp-image-size size-calc-gauge--margin-right" data-gauge="TODDLER" tabindex="0" role="radio">
+                                                    <div id="Toddler" class="image-container">
+                                                        <img src="https://clarks.scene7.com/is/image/Pangaea2Build/ir-ss20-measure-and-fit-toddlerGauge-wk50?wid=250&fmt=pjpg" alt="">
+                                                    </div>
+                                                    <h5 class="size-calculator--gauge-heading">Toddler</h5>
+                                                </a>
+                                                <!-- ** Junior gauge image, title and functionality -->
+                                                <a href="#gauge-anchor--section" class="gauge-image form-group js-guage-selection temp-image-size size-calc-gauge--margin-left" data-gauge="JUNIOR" tabindex="0" role="radio">
+                                                    <div id="Junior" class="image-container">
+                                                        <img src="https://clarks.scene7.com/is/image/Pangaea2Build/ir-ss20-measure-and-fit-juniorGauge-wk50?wid=250&fmt=pjpg" alt="">
+                                                    </div>
+                                                    <h5 class="size-calculator--gauge-heading">Junior</h5>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="size-calculator--align-center"> <!-- Enter measurements heading -->
+                                            <div id="measurement-container--step" class="size-calculator--input-text">
+                                                <p class="size-calculator--input-text-p1">Step 2: Enter measurements</p>
+                                                <p class="size-calculator--input-text-p2">After selecting the Clarks foot gauge, type in the measurements exactly as you see them on the gauge. If you found a slight difference between feet, enter the largest length and width measurements.</p>
+                                            </div>
+                                            <div class="measurement-container measurement-container--full-width" style="margin-bottom: 5px;"> <!-- ** Length and Width input fields -->
+                                                <div id="size-calc--length-field" class="form-group input-box-margin size-calculator--input-width size-calculator--input-width-80 size-calc--input-right">
+                                                    <label for="lengthCalculator" id="lengthCalculatorLabel" class="size-calc--input-label">Length</label>
+                                                    <input tabindex="-1" class="disable-input-fields size-calculator--input-boxes size-calculator--input-boxes-width" maxlength="3" tabindex="-1" id="lengthCalculator" aria-labelledby="lengthCalculatorLabel" data-parsley-error-message="Please enter the length in mm" data-parsley-required="true" data-parsley-trigger="blur" name="" type="tel" data-parsley-id="13">
+                                                </div>
+                                                <div id="size-calc--width-field" class="form-group size-calculator--input-width size-calculator--input-width-80 size-calc--input-left">
+                                                    <label for="widthCalculator" id="widthCalculatorLabel" class="size-calc--input-label">Width</label>
+                                                    <input tabindex="-1" class="disable-input-fields size-calculator--input-boxes size-calculator--input-boxes-width" maxlength="3" tabindex="-1" id="widthCalculator" aria-labelledby="widthCalculatorLabel" data-parsley-error-message="Please enter the width in mm" data-parsley-required="true" data-parsley-trigger="blur" name="" type="tel">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="js-invalid-measurement-error" style="display: none;"> <!-- If measurements are out of range -->
+                                            <p class="help-block" role="alert">The measurements you entered are out of range. For advice or guidance, please <!-- <a class="size-calculator--error-links" href="measureandfit-shoe-size">book a virtual kids fitting</a> or --> <a class="size-calculator--error-links" href="/measureandfit-in-store">book an in-store kids fitting</a> with one of our trained fitters.</p>
+                                        </div>
+                                        <div class="size-calculator--calculate"> <!-- ** Calculate Button -->
+                                            <button id="size-calculator--main-button" class="disable-input-fields button btn-yellow js-size-calculate" data-dismiss="" data-target="" data-toggle="" tabindex="-1" type="button" aria-expanded="false">Calculate Size</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="hidden" name="CSRFToken" value="a9fc1bc2-f201-4df1-9d88-9da43205d8e5"> <!-- ! -->
+                            </div>
+                        </form>
+                        <div class="size-calculator--tape-measure">
+                            <img class="size-calculator--tape-measure-img" src="https://clarks.scene7.com/is/image/Pangaea2Build/faqsicon-blue-rotate">
+                            <p class="size-calculator--tape-measure-text">This calculator will not give an accurate size based upon measurements from a tape measure. <a class="size-calculator--tape-measure-text" href="/measureandfit-at-home#buy-a-foot-gauge">Buy a Clarks Foot Gauge.</a></p>
+                        </div>
+                    </div>
+                    <div id="calculated-results-section" class="size-calculator--results" aria-hidden="true">
+                        <h2 class="testing-h2--sizing" id="testing-h2--sizing"></h2> <!-- Temp position for calculated size -->
+                        <div id="MAF-result-section" class="MAF-Result--result-section">
+                            <p class="MAF-Size-calculator--size" id="calculated-size--field"></p>
+                            <p class="MAF-Size-calculator--size" id="calculated-width--field"></p>
+                        </div>
+                        <div class="size-calculator--shop-buttons-container">
+                            <div>
+                                <p id="size-calculator--help-text" class="hidden">The measurements you entered are out of range. For advice or guidance, please <!-- <a style="text-decoration: underline;" href="measureandfit-shoe-size">book a virtual kids fitting</a> or --> <a style="text-decoration: underline;" href="/measureandfit-in-store">book an in-store kids fitting</a> with one of our trained fitters.</p>
+                            </div>
+                            <a class="size-calculator--shop-buttons shop-buttons--left shop-button--active" id="size-calculator--boys-link" href=""></a>
+                            <a class="size-calculator--shop-buttons shop-buttons--right shop-button--active" id="size-calculator--girls-link" href=""></a>
+                            <!-- <a class="size-calculator--shop-buttons-help shop-buttons--left shop-button--active hidden" id="size-calculator--help-link-2" href="/measureandfit-shoe-size">Virtual Kids Fitting</a> -->
+                            <a class="size-calculator--shop-buttons-help shop-buttons--left shop-button--active hidden" id="size-calculator--help-link-1" href="/measureandfit-in-store">In-Store Kids Fitting</a>
+                            <button id="size-calculator--recalculate" class="button btn-yellow" aria-expanded="true">Re-calculate Size</button>
+                        </div>
+                    </div>
+                    <div id="isaac-testing-api" style="display: none;"></div>
+                </div>
+            </div>
+            <div id="MAF-Step-three-inputs">
+                <div class="MAF-Step--inner-section">
+                    <div class="MAF-Step--text">
+                        <h2 class="MAF-Step-heading" style="font-weight: 600;">Replay the Video</h2>
+                        <p class="need-a-gauge--text-secondary">Re-watch our videos on how to use your foot gauge or download our step-by-step guides.</p>
+                    </div>
+                    <div class="MAF-Step--videos MAF-Right-user-inputs">
+                        <div class="measure-gauge-videos--flex">
+                            <div class="measure-gauge-videos--toddler measure-gauge-videos-relative-right">
+                                <h4 class="measure-gauge-videos--h4">Toddler Video</h4>
+                                <div class="iframe-container--measure">
+                                    <iframe class="measure--video-sizing" src="https://www.youtube.com/embed/nNdCjQ_VxJc?rel=0&showinfo=0&modestbranding=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <a href="/assets/editorials/ss20/MAF-trio/Toddler-gauge-step-by-step-guide-2020.pdf" download target="_blank" class="MAF-Step-three--links">Download Toddler Guide</a>
+                            </div>
+                            <div class="measure-gauge-videos--junior measure-gauge-videos-relative-left">
+                                <h4 class="measure-gauge-videos--h4">Junior Video</h4>
+                                <div class="iframe-container--measure">
+                                    <iframe class="measure--video-sizing" src="https://www.youtube.com/embed/nXb2y_l069o?rel=0&showinfo=0&modestbranding=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <a href="/assets/editorials/ss20/MAF-trio/Junior-gauge-step-by-step-guide-2020.pdf" download target="_blank" class="MAF-Step-three--links">Download Junior Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="maf-container maf-container--padding-y-45 maf-container--background-grey" id="virtual-fitting">
+                <div class="maf-flex--1200">
+                    <div class="maf-flex--child-left">
+                        <h2 class="maf__heading maf__heading--left maf__heading--2">Virtual Fitting</h2>
+                        <p class="maf__para">Need help? Book a Virtual Fitting and one of our trained experts can help you use your Clarks foot gauge and calculate your child’s shoe size during an online video call.</p>
+                    </div>
+                    <div class="maf-flex--child-right">
+                        <div class="maf-container--split">
+                            <div class="maf-container--split-child">                
+                                <div class="maf-container--icon">
+                                    <img class="maf__img" alt="" src="https://clarks.scene7.com/is/content/Pangaea2Build/ss20-Maf-svg-006">
+                                </div>                
+                                <a class="maf__cta maf__cta--full maf__cta--white" href="/measureandfit-shoe-size">Book a Virtual Fitting</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div id="MAF-Step-four-inputs" class="hidden">
+                <div class="MAF-Step--inner-section-block">
+                    <h3>Need Some Help?</h3>
+                    <p class="MAF-Step-four--text">We are on hand to help with any queries or questions you may have.</p>
+                    <ul class="MAF-Step--list">
+                        <!-- <li class="MAF-Step-four--list">
+                            <a class="MAF-Step-four--links MAF-Step--list-element" href="">Book a Virtual Fitting</a>
+                        </li> -->
+                        <li class="MAF-Step-four--list">
+                            <a class="MAF-Step-four--links MAF-Step--list-element" href="">Live Chat</a>
+                        </li>
+                        <li class="MAF-Step-four--list">
+                            <a class="MAF-Step-four--links MAF-Step--list-element" href="">How to Check the Fit</a>
+                        </li>
+                        <li class="hidden">
+                            <a class="MAF-Step-four--links MAF-Step--list-element" href="">Back to Measure and Fit</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="MAF-Step-five-inputs">
+                <div class="MAF-Step--inner-section-block">
+                    <ul class="MAF-Step--list">
+                        <li class="MAF-Step-four--list">
+                            <a class="MAF-Step-four--links MAF-Step--list-element" href="/measureandfit-at-home#check-the-fit">How to Check the Fit</a>
+                        </li>
+                        <li class="MAF-Step-four--list">
+                            <a class="MAF-Step-four--links MAF-Step--list-element" href="/search/?text=foot%20gauges">Shop Foot Gauges</a>
+                        </li>
+                        <li class="MAF-Step-four--list">
+                            <a class="MAF-Step-four--links MAF-Step--list-element" href="/Girls/All-styles/c/g4">Shop Girls</a>
+                        </li>
+                        <li class="MAF-Step-four--list">
+                            <a class="MAF-Step-four--links MAF-Step--list-element" href="/Boys/All-Styles/c/b4">Shop Boys</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="/school-shoes" class="maf-container maf-container--footer">
+            <picture>
+                <source data-srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-mobile-header?fmt=pjpeg&amp;wid=480" media="(max-width: 480px)">
+                <source data-srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-mobile-header?fmt=pjpeg&amp;wid=649" media="(max-width: 649px)">
+                <source data-srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-mobile-header?fmt=pjpeg&amp;wid=749" media="(max-width: 750px)">
+                <source data-srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-desktop-header?fmt=pjpeg&amp;wid=991" media="(max-width: 991px)">
+                <source data-srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-desktop-header?fmt=pjpeg&amp;wid=1199" media="(max-width: 1199px)">
+                <source data-srcset="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-desktop-header?fmt=pjpeg&amp;wid=1500" media="(min-width: 1200px)">
+                <img class="lazy" data-src="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-Maf-Trio-desktop-header?fmt=pjpeg&wid=1500" alt="Back to School" src="https://clarks.scene7.com/is/image/Pangaea2Build/ss20-trade-placeholder-wk01?&fmt=png-alpha&wid=1">
+            </picture>
+        </a>
+        <a href="/school-shoes" class="maf__cta maf__cta--full maf__cta--white">Back to School Shop</a>
+    </div>
+</body>
+</html>
